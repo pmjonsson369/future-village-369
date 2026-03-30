@@ -2,17 +2,27 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-32 md:py-40 px-6 border-t border-border">
-      <div className="max-w-3xl mx-auto text-center">
+    <section id="about" className="relative py-32 md:py-40 px-6 overflow-hidden bg-gradient-section-alt">
+      {/* Ambient glow */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-primary/3 blur-[150px]" />
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-semibold leading-tight tracking-tight mb-8"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6"
         >
           We don't build eco-villages.
-          <br />
-          <span className="text-muted-foreground">We design connected living systems.</span>
+        </motion.h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-gradient-green"
+        >
+          We design connected living systems.
         </motion.h2>
       </div>
     </section>

@@ -1,14 +1,26 @@
 import { motion } from "framer-motion";
+import visionBg from "@/assets/vision-bg.jpg";
 
 const VisionSection = () => {
   return (
-    <section id="vision" className="py-32 md:py-40 px-6">
-      <div className="max-w-3xl mx-auto text-center">
+    <section id="vision" className="relative py-40 md:py-56 px-6 overflow-hidden">
+      {/* Background image with parallax feel */}
+      <img
+        src={visionBg}
+        alt="Futuristic regenerative village at dusk"
+        loading="lazy"
+        width={1920}
+        height={800}
+        className="absolute inset-0 w-full h-full object-cover opacity-30"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
+
+      <div className="relative z-10 max-w-3xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-sm text-muted-foreground tracking-widest uppercase mb-6"
+          className="text-sm text-primary tracking-[0.3em] uppercase mb-8 font-body"
         >
           The Vision
         </motion.p>
@@ -17,7 +29,7 @@ const VisionSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-semibold leading-tight tracking-tight"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight glow-text"
         >
           A new way of living, building and organizing society.
         </motion.h2>
