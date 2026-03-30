@@ -1,11 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-12">
-      <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-        <p>
-          <span className="text-gradient font-display font-semibold">369</span> Future Village © {new Date().getFullYear()}
-        </p>
-        <p className="text-xs">The future of living is regenerative.</p>
+    <footer className="border-t border-border py-8 px-6">
+      <div className="max-w-6xl mx-auto flex items-center justify-between text-xs text-muted-foreground">
+        <span>369 Future Village © {new Date().getFullYear()}</span>
+        <span>The future is regenerative.</span>
       </div>
     </footer>
   );

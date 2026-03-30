@@ -1,43 +1,38 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "About", href: "#about" },
+  { label: "Vision", href: "#vision" },
   { label: "System", href: "#system" },
   { label: "Projects", href: "#projects" },
-  { label: "Vision", href: "#vision" },
-  { label: "Documentation", href: "#docs" },
-  { label: "Collaborate", href: "#contact" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-      <div className="container flex items-center justify-between h-16">
-        <a href="#" className="font-display font-bold text-lg tracking-wide">
-          <span className="text-gradient">369</span>{" "}
-          <span className="text-foreground">Future Village</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl">
+      <div className="max-w-6xl mx-auto flex items-center justify-between h-14 px-6">
+        <a href="#" className="text-sm font-semibold tracking-wide text-foreground">
+          369 Future Village
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors tracking-wide"
             >
               {l.label}
             </a>
           ))}
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
@@ -47,9 +42,9 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden overflow-hidden border-b border-border bg-background/95 backdrop-blur-xl"
+            className="md:hidden overflow-hidden bg-background/95 backdrop-blur-xl border-t border-border"
           >
-            <div className="container py-4 flex flex-col gap-4">
+            <div className="px-6 py-4 flex flex-col gap-4">
               {links.map((l) => (
                 <a
                   key={l.href}
