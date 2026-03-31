@@ -4,19 +4,22 @@ import heroBg from "@/assets/hero-bg.jpg";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <img
+      {/* Background image with slow zoom */}
+      <motion.img
         src={heroBg}
         alt="Futuristic eco-village at golden hour"
         width={1920}
         height={1080}
+        initial={{ scale: 1 }}
+        animate={{ scale: 1.08 }}
+        transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Dark overlay with gradient */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
 
-      {/* Glow effect behind content */}
+      {/* Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] animate-glow-pulse" />
 
       <div className="relative z-10 max-w-4xl text-center px-6">
@@ -44,7 +47,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-14 font-body"
         >
-          We design intelligent eco-systems for villages, communities and future cities.
+          We design intelligent, self-sustaining systems for homes, villages and future cities.
         </motion.p>
 
         <motion.a
@@ -52,13 +55,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="inline-block px-10 py-4 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 glow-green-sm font-body"
+          className="inline-block px-10 py-4 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 glow-green-sm animate-glow-pulse font-body"
         >
           Work With Me
         </motion.a>
       </div>
 
-      {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );

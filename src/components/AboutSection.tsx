@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 const AboutSection = () => {
   return (
     <section id="about" className="relative py-32 md:py-40 px-6 overflow-hidden bg-gradient-section-alt">
-      {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-primary/3 blur-[150px]" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
