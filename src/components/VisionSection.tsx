@@ -4,7 +4,6 @@ import visionBg from "@/assets/vision-bg.jpg";
 const VisionSection = () => {
   return (
     <section id="vision" className="relative py-40 md:py-56 px-6 overflow-hidden">
-      {/* Background image with parallax feel */}
       <img
         src={visionBg}
         alt="Futuristic regenerative village at dusk"
@@ -31,7 +30,7 @@ const VisionSection = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight glow-text"
         >
-          A new way of living, building and organizing society.
+          A new way of living, building and organizing society — where technology and nature exist in balance.
         </motion.h2>
       </div>
     </section>

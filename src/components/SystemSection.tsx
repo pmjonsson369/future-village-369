@@ -31,7 +31,7 @@ const SystemSection = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-center mb-6"
         >
-          We design systems for water, food, energy and smart monitoring.
+          We design interconnected systems for water, food, energy and intelligent monitoring.
         </motion.h2>
 
         <motion.p
@@ -40,7 +40,7 @@ const SystemSection = () => {
           viewport={{ once: true }}
           className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-20 font-body"
         >
-          Each pillar is designed to work independently and as part of one intelligent, connected ecosystem.
+          Each system works independently — and together as one intelligent, regenerative ecosystem.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -53,7 +53,6 @@ const SystemSection = () => {
               transition={{ delay: i * 0.1, duration: 0.6 }}
               className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all duration-500"
             >
-              {/* Card image */}
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={s.image}
@@ -66,12 +65,10 @@ const SystemSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
               </div>
 
-              {/* Card content */}
               <div className="relative p-8">
-                {/* Hover glow */}
                 <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-40 h-40 rounded-full bg-primary/0 group-hover:bg-primary/5 blur-[60px] transition-all duration-700" />
 
-                <s.icon className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
+                <s.icon className="w-5 h-5 text-primary mb-4 drop-shadow-[0_0_6px_hsl(var(--primary)/0.6)]" strokeWidth={1.5} />
                 <h3 className="text-lg font-semibold mb-2">{s.label}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed font-body">{s.desc}</p>
               </div>
