@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Brain, Leaf, Settings, Sun } from "lucide-react";
-import gardenHero from "@/assets/garden-hero.jpg";
-import gardenTech from "@/assets/garden-tech.jpg";
-import gardenHarvest from "@/assets/garden-harvest.jpg";
+import { ArrowLeft, Home, Zap, Droplets, Sprout } from "lucide-react";
+import heroImg from "@/assets/future-villa-hero.jpg";
+import ecoImg from "@/assets/future-villa-eco.jpg";
+import interiorImg from "@/assets/future-villa-interior.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const features = [
-  { icon: Brain, title: "AI-Driven", desc: "Machine learning monitors growth patterns and optimizes conditions in real time." },
-  { icon: Settings, title: "Automated", desc: "Robotic systems handle planting, watering and nutrient delivery autonomously." },
-  { icon: Leaf, title: "Regenerative", desc: "Closed-loop design that builds soil health and eliminates waste." },
-  { icon: Sun, title: "Adaptable", desc: "Modular setup that works indoors, outdoors, and in any climate zone." },
+  { icon: Zap, title: "Energy", desc: "Solar, wind and battery storage designed for Nordic conditions." },
+  { icon: Droplets, title: "Water", desc: "Rainwater harvesting, greywater recycling and purification systems." },
+  { icon: Sprout, title: "Food", desc: "Integrated greenhouse and smart garden for year-round food production." },
+  { icon: Home, title: "Architecture", desc: "Passive house design with natural materials and smart climate control." },
 ];
 
-const Garden = () => {
+const FutureVilla = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -22,8 +22,8 @@ const Garden = () => {
       {/* Hero */}
       <section className="relative h-[85vh] flex items-end">
         <img
-          src={gardenHero}
-          alt="Smart Garden System with automated hydroponics"
+          src={heroImg}
+          alt="Future Villa — Scandinavian self-sustaining home in Nordic forest"
           width={1920}
           height={1080}
           className="absolute inset-0 w-full h-full object-cover"
@@ -42,12 +42,12 @@ const Garden = () => {
               <ArrowLeft size={14} />
               Back
             </Link>
-            <p className="text-sm text-primary tracking-[0.3em] uppercase mb-4 font-body">Module 02</p>
+            <p className="text-sm text-primary tracking-[0.3em] uppercase mb-4 font-body">Module 01</p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6 font-display">
-              Smart Garden<br />System
+              Future Villa
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl font-body leading-relaxed">
-              An intelligent food production system using AI, automation and regenerative design to grow clean, local food anywhere.
+              A fully self-sustaining living unit designed for Nordic conditions — combining architecture, energy, water and food into one intelligent system.
             </p>
           </motion.div>
         </div>
@@ -62,7 +62,7 @@ const Garden = () => {
             viewport={{ once: true }}
             className="text-2xl md:text-4xl font-bold tracking-tight mb-16 font-display"
           >
-            Intelligence meets nature.
+            One system. Four pillars.
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((f, i) => (
@@ -93,15 +93,15 @@ const Garden = () => {
             className="relative rounded-2xl overflow-hidden aspect-[16/10]"
           >
             <img
-              src={gardenTech}
-              alt="Robotic systems tending plants"
+              src={ecoImg}
+              alt="Eco architecture integrated into Nordic nature"
               loading="lazy"
               width={1280}
               height={720}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-            <p className="absolute bottom-6 left-6 text-sm font-body text-foreground/80">Automation — AI-powered growing</p>
+            <p className="absolute bottom-6 left-6 text-sm font-body text-foreground/80">Architecture — Nature-integrated design</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -111,15 +111,15 @@ const Garden = () => {
             className="relative rounded-2xl overflow-hidden aspect-[16/10]"
           >
             <img
-              src={gardenHarvest}
-              alt="Fresh harvest from smart garden"
+              src={interiorImg}
+              alt="Minimalist Nordic interior with natural materials"
               loading="lazy"
               width={1280}
               height={720}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-            <p className="absolute bottom-6 left-6 text-sm font-body text-foreground/80">Harvest — Clean, local food production</p>
+            <p className="absolute bottom-6 left-6 text-sm font-body text-foreground/80">Interior — Natural materials & smart climate</p>
           </motion.div>
         </div>
       </section>
@@ -132,7 +132,7 @@ const Garden = () => {
           viewport={{ once: true }}
           className="text-muted-foreground text-lg max-w-xl mx-auto mb-8 font-body"
         >
-          Interested in the smart garden system? Let's talk.
+          Interested in the Future Villa system? Let's talk.
         </motion.p>
         <a
           href="mailto:369futurevillage@gmail.com"
@@ -147,4 +147,4 @@ const Garden = () => {
   );
 };
 
-export default Garden;
+export default FutureVilla;
