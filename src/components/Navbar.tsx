@@ -5,8 +5,8 @@ import { Menu, X } from "lucide-react";
 const links = [
   { label: "Vision", href: "#vision" },
   { label: "System", href: "#system" },
-  { label: "Modules", href: "#modules" },
-  
+  { label: "Future Villa", href: "/future-villa" },
+  { label: "Smart Garden", href: "/smart-garden" },
   { label: "Contact", href: "#contact" },
 ];
 
