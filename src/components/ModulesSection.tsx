@@ -10,14 +10,14 @@ const modules = [
     desc: "A fully self-sustaining living unit designed for Nordic conditions — combining architecture, energy, water and food into one intelligent system.",
     icon: Home,
     image: villaImg,
-    href: "/villa",
+    href: "/future-villa",
   },
   {
     label: "Smart Garden System",
     desc: "An intelligent food production system using AI, automation and regenerative design to grow clean, local food anywhere.",
     icon: Sprout,
     image: gardenImg,
-    href: "/garden",
+    href: "/smart-garden",
   },
 ];
 
