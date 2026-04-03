@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Home, Sprout, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import villaImg from "@/assets/villa-module.jpg";
-import gardenImg from "@/assets/smart-garden.jpg";
+import gardenImg from "@/assets/smart-garden-hero.jpg";
 
 const modules = [
   {

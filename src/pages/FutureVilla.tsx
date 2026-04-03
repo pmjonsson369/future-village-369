@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Home, Zap, Droplets, Sprout } from "lucide-react";
@@ -15,6 +16,7 @@ const features = [
 ];
 
 const FutureVilla = () => {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
