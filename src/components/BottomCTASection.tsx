@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const BottomCTASection = () => {
   return (
-    <section className="relative py-32 md:py-40 px-6 overflow-hidden">
+    <section id="contact" className="relative py-32 md:py-40 px-6 overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary/5 blur-[120px]" />
 
       <div className="relative z-10 max-w-2xl mx-auto text-center">
@@ -13,7 +13,7 @@ const BottomCTASection = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold leading-tight tracking-tight mb-6"
         >
-          Interested in exploring this for your home or community?
+          Interested in building a more self-sustaining system?
         </motion.h2>
 
         <motion.a
