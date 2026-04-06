@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with slow zoom */}
       <motion.img
         src={heroBg}
         alt="Futuristic eco-village at golden hour"
@@ -16,10 +16,8 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
 
-      {/* Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] animate-glow-pulse" />
 
       <div className="relative z-10 max-w-4xl text-center px-6">
@@ -38,27 +36,38 @@ const HeroSection = () => {
           transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-8 glow-text"
         >
-          Building the Future of Regenerative Living
+          Smart systems for self-sustaining homes and eco-villages
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-14 font-body"
+          className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-14 font-body"
         >
-          We design intelligent, self-sustaining systems for homes, villages and future cities.
+          Starting with water, food and automation — building the foundation for future living where nature and technology work as one.
         </motion.p>
 
-        <motion.a
-          href="mailto:369futurevillage@gmail.com"
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="inline-block px-10 py-4 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 glow-green-sm font-body"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          Work With Me
-        </motion.a>
+          <a
+            href="mailto:369futurevillage@gmail.com"
+            className="inline-block px-10 py-4 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 glow-green-sm font-body"
+          >
+            Book a Call
+          </a>
+          <a
+            href="#system"
+            className="inline-flex items-center gap-2 px-10 py-4 rounded-full border border-border text-sm font-semibold tracking-wide text-foreground/80 hover:border-primary/40 hover:text-foreground transition-all duration-300 font-body"
+          >
+            Explore the System
+            <ArrowRight size={14} />
+          </a>
+        </motion.div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />

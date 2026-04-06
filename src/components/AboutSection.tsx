@@ -12,7 +12,7 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6"
         >
-          We don't build eco-villages.
+          We don't sell ideas.
         </motion.h2>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ const AboutSection = () => {
           transition={{ delay: 0.15 }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-gradient-green"
         >
-          We design connected living systems.
+          We build real systems you can use today.
         </motion.h2>
       </div>
     </section>

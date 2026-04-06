@@ -30,7 +30,7 @@ const VisionSection = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight glow-text"
         >
-          A new way of living, building and organizing society — where technology and nature exist in balance.
+          A future where homes produce their own food, manage their own water, and run on intelligent systems — by default.
         </motion.h2>
       </div>
     </section>

@@ -9,7 +9,7 @@ const CredibilitySection = () => {
         viewport={{ once: true }}
         className="text-center text-muted-foreground text-base md:text-lg max-w-2xl mx-auto font-body"
       >
-        Open for collaborations with eco-villages, municipalities, investors and future-focused partners.
+        Currently collaborating with homeowners, eco-village projects, and forward-thinking partners across Scandinavia.
       </motion.p>
     </section>
   );
