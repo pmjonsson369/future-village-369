@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -17,7 +18,6 @@ const HeroSection = () => {
       />
 
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] animate-glow-pulse" />
 
       <div className="relative z-10 max-w-4xl text-center px-6">
@@ -54,19 +54,18 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="mailto:369futurevillage@gmail.com"
-            className="inline-block px-10 py-4 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 glow-green-sm font-body"
+          <Link
+            to="/smart-garden"
+            className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 glow-green-sm font-body"
           >
-            Book a Call
-          </a>
-          <a
-            href="#system"
+            Explore Smart Garden <ArrowRight size={14} />
+          </Link>
+          <Link
+            to="/eco-villages"
             className="inline-flex items-center gap-2 px-10 py-4 rounded-full border border-border text-sm font-semibold tracking-wide text-foreground/80 hover:border-primary/40 hover:text-foreground transition-all duration-300 font-body"
           >
-            Explore the System
-            <ArrowRight size={14} />
-          </a>
+            Explore Eco-Villages <ArrowRight size={14} />
+          </Link>
         </motion.div>
       </div>
 

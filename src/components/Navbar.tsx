@@ -4,10 +4,11 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const links = [
-  { label: "Vision", href: "#vision" },
-  { label: "System", href: "#system" },
-  { label: "Future Villa", href: "/future-villa" },
+  { label: "Home", href: "/" },
   { label: "Smart Garden", href: "/smart-garden" },
+  { label: "Smart Villa", href: "/smart-villa" },
+  { label: "Eco-Villages", href: "/eco-villages" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
