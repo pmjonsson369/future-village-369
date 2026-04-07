@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const links = [
   { label: "Home", href: "/" },
   { label: "Smart Garden", href: "/smart-garden" },
+  { label: "Smart Greenhouse", href: "/smart-greenhouse" },
   { label: "Smart Villa", href: "/smart-villa" },
   { label: "Eco-Villages", href: "/eco-villages" },
   { label: "About", href: "#about" },
