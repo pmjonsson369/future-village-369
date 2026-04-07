@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import SmartGarden from "./pages/SmartGarden.tsx";
 import SmartVilla from "./pages/SmartVilla.tsx";
+import SmartGreenhouse from "./pages/SmartGreenhouse.tsx";
 import EcoVillages from "./pages/EcoVillages.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/smart-garden" element={<SmartGarden />} />
           <Route path="/smart-villa" element={<SmartVilla />} />
+          <Route path="/smart-greenhouse" element={<SmartGreenhouse />} />
           <Route path="/eco-villages" element={<EcoVillages />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
