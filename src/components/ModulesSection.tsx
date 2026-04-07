@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { Home, Sprout, Trees, ArrowRight } from "lucide-react";
+import { Sprout, Home, Trees, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import villaImg from "@/assets/villa-module.jpg";
-import gardenImg from "@/assets/smart-garden-hero.jpg";
+import gardenImg from "@/assets/garden-outdoor-1.jpg";
+import greenhouseImg from "@/assets/greenhouse-dark.jpg";
+import villaImg from "@/assets/villa-exterior-2.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const modules = [
@@ -12,6 +13,13 @@ const modules = [
     icon: Sprout,
     image: gardenImg,
     href: "/smart-garden",
+  },
+  {
+    label: "Smart Greenhouse",
+    desc: "Year-round growing with climate control, sensors, and automated systems — the next level of smart growing.",
+    icon: Sprout,
+    image: greenhouseImg,
+    href: "/smart-greenhouse",
   },
   {
     label: "Smart Villa",
@@ -48,7 +56,7 @@ const ModulesSection = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-center mb-4"
         >
-          Three systems. One vision.
+          Smart Growing Systems
         </motion.h2>
 
         <motion.p
@@ -60,7 +68,7 @@ const ModulesSection = () => {
           From a single garden to an entire village — scalable systems for every level of self-sustaining living.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {modules.map((m, i) => (
             <Link key={m.label} to={m.href}>
               <motion.div
@@ -70,7 +78,7 @@ const ModulesSection = () => {
                 transition={{ delay: i * 0.12, duration: 0.6 }}
                 className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 hover:-translate-y-1 transition-all duration-500 cursor-pointer h-full"
               >
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
                   <img
                     src={m.image}
                     alt={m.label}
@@ -82,10 +90,10 @@ const ModulesSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
                 </div>
 
-                <div className="relative p-8">
-                  <m.icon className="w-6 h-6 text-primary mb-4 drop-shadow-[0_0_6px_hsl(var(--primary)/0.6)]" strokeWidth={1.5} />
-                  <h3 className="text-lg font-bold mb-2">{m.label}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-body mb-4">{m.desc}</p>
+                <div className="relative p-6">
+                  <m.icon className="w-5 h-5 text-primary mb-3 drop-shadow-[0_0_6px_hsl(var(--primary)/0.6)]" strokeWidth={1.5} />
+                  <h3 className="text-base font-bold mb-2">{m.label}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed font-body mb-3">{m.desc}</p>
                   <span className="inline-flex items-center gap-2 text-xs text-primary font-medium tracking-wide font-body group-hover:gap-3 transition-all duration-300">
                     Learn More <ArrowRight size={14} />
                   </span>
