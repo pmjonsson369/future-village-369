@@ -2,7 +2,10 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Droplets, Sprout, Radio, Home, Zap, TrendingUp, ArrowUpRight } from "lucide-react";
-import heroImg from "@/assets/future-villa-hero.jpg";
+import heroImg from "@/assets/villa-exterior-2.jpg";
+import villaExterior1 from "@/assets/villa-exterior-1.jpg";
+import gardenInterior1 from "@/assets/villa-garden-interior-1.jpg";
+import gardenInterior2 from "@/assets/villa-garden-interior-2.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
