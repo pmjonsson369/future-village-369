@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Droplets, Sprout, Radio, Eye, Shield, TrendingUp, Zap, Home, ArrowUpRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { Droplets, Sprout, Radio, Eye, Shield, TrendingUp, Zap, Home, ArrowUpRight } from "lucide-react";
+import heroImg from "@/assets/ecovillage-hero.jpg";
+import ecoImg2 from "@/assets/ecovillage-2.jpg";
+import ecoImg3 from "@/assets/ecovillage-3.jpg";
+import ecoImg4 from "@/assets/ecovillage-4.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -29,14 +32,11 @@ const EcoVillages = () => {
 
       {/* Hero */}
       <section className="relative h-[85vh] flex items-end">
-        <img src={heroBg} alt="Eco-village — connected community systems" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroImg} alt="Eco-village — regenerative community" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="relative z-10 max-w-5xl mx-auto px-6 pb-20 w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <Link to="/" className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors mb-8 font-body">
-              <ArrowLeft size={14} /> Back
-            </Link>
-            <p className="text-sm text-primary tracking-[0.3em] uppercase mb-4 font-body">Eco-Villages</p>
+            <p className="text-sm text-primary tracking-[0.3em] uppercase mb-4 font-body">Ecovillages</p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6 font-display">
               Smart systems<br />for eco-villages
             </h1>
@@ -66,6 +66,23 @@ const EcoVillages = () => {
         </div>
       </section>
 
+      {/* Gallery */}
+      <section className="py-12 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { img: ecoImg2, caption: "Solar-powered community homes" },
+            { img: ecoImg3, caption: "Shared gardens and pathways" },
+            { img: ecoImg4, caption: "Connected water systems" },
+          ].map((item, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={item.img} alt={item.caption} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">{item.caption}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* Pilot Approach */}
       <section className="py-24 px-6 border-t border-border">
         <div className="max-w-5xl mx-auto">
@@ -75,13 +92,7 @@ const EcoVillages = () => {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {pilotSteps.map((s, i) => (
-              <motion.div
-                key={s.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12, duration: 0.5 }}
-              >
+              <motion.div key={s.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12, duration: 0.5 }}>
                 <span className="text-4xl font-bold text-primary/20 font-display">{s.step}</span>
                 <h3 className="text-lg font-bold mt-2 mb-2 font-display">{s.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed font-body">{s.desc}</p>
@@ -104,14 +115,7 @@ const EcoVillages = () => {
               { icon: Shield, title: "Less Manual Work", desc: "Automation handles routine tasks so people can focus on what matters." },
               { icon: TrendingUp, title: "Long-Term Resilience", desc: "Data-driven decisions create systems that get stronger over time." },
             ].map((b, i) => (
-              <motion.div
-                key={b.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="p-8 rounded-2xl border border-border bg-card"
-              >
+              <motion.div key={b.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="p-8 rounded-2xl border border-border bg-card">
                 <b.icon className="w-6 h-6 text-primary mb-4 drop-shadow-[0_0_6px_hsl(var(--primary)/0.5)]" strokeWidth={1.5} />
                 <h3 className="text-lg font-bold mb-2 font-display">{b.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed font-body">{b.desc}</p>
@@ -131,13 +135,7 @@ const EcoVillages = () => {
               What starts as a simple pilot can evolve into a full village operating system — energy management, climate-responsive infrastructure, and semi-automated environments that learn and adapt.
             </p>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="flex items-center justify-center gap-8"
-          >
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="flex items-center justify-center gap-8">
             {[
               { icon: Zap, label: "Energy Systems" },
               { icon: Home, label: "Climate Infrastructure" },

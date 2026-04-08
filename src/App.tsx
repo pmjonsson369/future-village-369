@@ -7,7 +7,10 @@ import Index from "./pages/Index.tsx";
 import SmartGarden from "./pages/SmartGarden.tsx";
 import SmartVilla from "./pages/SmartVilla.tsx";
 import SmartGreenhouse from "./pages/SmartGreenhouse.tsx";
+import SmartGrowingSystems from "./pages/SmartGrowingSystems.tsx";
 import EcoVillages from "./pages/EcoVillages.tsx";
+import About from "./pages/About.tsx";
+import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -23,7 +26,10 @@ const App = () => (
           <Route path="/smart-garden" element={<SmartGarden />} />
           <Route path="/smart-villa" element={<SmartVilla />} />
           <Route path="/smart-greenhouse" element={<SmartGreenhouse />} />
+          <Route path="/smart-growing-systems" element={<SmartGrowingSystems />} />
           <Route path="/eco-villages" element={<EcoVillages />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
