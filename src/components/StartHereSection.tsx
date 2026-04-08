@@ -4,32 +4,22 @@ import { Link } from "react-router-dom";
 
 const columns = [
   {
-    title: "Smart Garden",
-    text: "A simple, real starting point — automated watering and a healthier, low-maintenance garden.",
-    btn: "Learn More",
-    href: "/smart-garden",
-    isEmail: false,
-  },
-  {
-    title: "Smart Greenhouse",
-    text: "Year-round growing with climate control, automated systems, and sensor intelligence.",
-    btn: "Explore",
-    href: "/smart-greenhouse",
-    isEmail: false,
-  },
-  {
     title: "Smart Villa",
     text: "A connected home system combining water, growing and future automation.",
     btn: "Explore",
     href: "/smart-villa",
-    isEmail: false,
   },
   {
-    title: "Eco-Villages",
+    title: "Smart Growing Systems",
+    text: "From smart gardens to year-round greenhouses — automated, intelligent growing.",
+    btn: "Learn More",
+    href: "/smart-growing-systems",
+  },
+  {
+    title: "Ecovillages",
     text: "Pilot projects for mapping and connecting systems in eco-communities.",
-    btn: "Book a Call",
-    href: "mailto:369futurevillage@gmail.com",
-    isEmail: true,
+    btn: "Learn More",
+    href: "/eco-villages",
   },
 ];
 
@@ -55,7 +45,7 @@ const StartHereSection = () => {
           Where do you begin?
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {columns.map((c, i) => (
             <motion.div
               key={c.title}
@@ -67,21 +57,12 @@ const StartHereSection = () => {
             >
               <h3 className="text-lg font-bold mb-3">{c.title}</h3>
               <p className="text-muted-foreground leading-relaxed font-body mb-6 flex-1 text-sm">{c.text}</p>
-              {c.isEmail ? (
-                <a
-                  href={c.href}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-border text-sm font-semibold tracking-wide text-foreground/80 hover:border-primary/40 hover:text-foreground transition-all duration-300 font-body w-fit"
-                >
-                  {c.btn} <ArrowRight size={14} />
-                </a>
-              ) : (
-                <Link
-                  to={c.href}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 glow-green-sm font-body w-fit"
-                >
-                  {c.btn} <ArrowRight size={14} />
-                </Link>
-              )}
+              <Link
+                to={c.href}
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 glow-green-sm font-body w-fit"
+              >
+                {c.btn} <ArrowRight size={14} />
+              </Link>
             </motion.div>
           ))}
         </div>

@@ -5,30 +5,21 @@ import { Link } from "react-router-dom";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "Smart Garden", href: "/smart-garden" },
-  { label: "Smart Greenhouse", href: "/smart-greenhouse" },
   { label: "Smart Villa", href: "/smart-villa" },
-  { label: "Eco-Villages", href: "/eco-villages" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Smart Growing Systems", href: "/smart-growing-systems" },
+  { label: "Ecovillages", href: "/eco-villages" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const NavLink = ({ l, onClick }: { l: typeof links[0]; onClick?: () => void }) => {
   const cls = "text-xs text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide font-body";
   const mobileCls = "text-sm text-muted-foreground hover:text-primary transition-colors font-body";
-  const isInternal = l.href.startsWith("/");
 
-  if (isInternal) {
-    return (
-      <Link to={l.href} className={onClick ? mobileCls : cls} onClick={onClick}>
-        {l.label}
-      </Link>
-    );
-  }
   return (
-    <a href={l.href} className={onClick ? mobileCls : cls} onClick={onClick}>
+    <Link to={l.href} className={onClick ? mobileCls : cls} onClick={onClick}>
       {l.label}
-    </a>
+    </Link>
   );
 };
 

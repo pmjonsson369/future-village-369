@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/ecovillage-hero.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <motion.img
         src={heroBg}
-        alt="Futuristic eco-village at golden hour"
+        alt="Modern eco-village with solar homes, water systems, and lush gardens"
         width={1920}
         height={1080}
         initial={{ scale: 1 }}
@@ -55,7 +55,7 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            to="/smart-garden"
+            to="/smart-growing-systems"
             className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 glow-green-sm font-body"
           >
             Explore Smart Garden <ArrowRight size={14} />

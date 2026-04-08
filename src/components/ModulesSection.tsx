@@ -2,25 +2,10 @@ import { motion } from "framer-motion";
 import { Sprout, Home, Trees, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import gardenImg from "@/assets/garden-outdoor-1.jpg";
-import greenhouseImg from "@/assets/greenhouse-dark.jpg";
 import villaImg from "@/assets/villa-exterior-2.jpg";
-import heroBg from "@/assets/hero-bg.jpg";
+import ecoImg from "@/assets/ecovillage-hero.jpg";
 
 const modules = [
-  {
-    label: "Smart Garden",
-    desc: "Automated irrigation, healthier plants, and a simple first step toward self-sustaining food production.",
-    icon: Sprout,
-    image: gardenImg,
-    href: "/smart-garden",
-  },
-  {
-    label: "Smart Greenhouse",
-    desc: "Year-round growing with climate control, sensors, and automated systems — the next level of smart growing.",
-    icon: Sprout,
-    image: greenhouseImg,
-    href: "/smart-greenhouse",
-  },
   {
     label: "Smart Villa",
     desc: "A connected home system where water, growing and automation work together for a more self-sustaining villa.",
@@ -29,10 +14,17 @@ const modules = [
     href: "/smart-villa",
   },
   {
-    label: "Eco-Villages",
+    label: "Smart Growing Systems",
+    desc: "From automated gardens to climate-controlled greenhouses — intelligent food production at every scale.",
+    icon: Sprout,
+    image: gardenImg,
+    href: "/smart-growing-systems",
+  },
+  {
+    label: "Ecovillages",
     desc: "Pilot projects for mapping water systems, connecting growing areas and building smarter communities.",
     icon: Trees,
-    image: heroBg,
+    image: ecoImg,
     href: "/eco-villages",
   },
 ];
@@ -56,7 +48,7 @@ const ModulesSection = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-center mb-4"
         >
-          Smart Growing Systems
+          What we're building
         </motion.h2>
 
         <motion.p
@@ -65,10 +57,10 @@ const ModulesSection = () => {
           viewport={{ once: true }}
           className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-20 font-body"
         >
-          From a single garden to an entire village — scalable systems for every level of self-sustaining living.
+          Scalable systems for every level of self-sustaining living.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {modules.map((m, i) => (
             <Link key={m.label} to={m.href}>
               <motion.div
