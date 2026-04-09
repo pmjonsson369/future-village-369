@@ -71,12 +71,10 @@ const SmartGarden = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
             <img src={gardenBeds} alt="Raised garden beds with lush greenery" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Clean raised beds, thriving plants</p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
             <img src={gardenCourtyard} alt="Garden courtyard with wooden raised beds" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Integrated landscape design</p>
           </motion.div>
         </div>
       </section>
@@ -117,18 +115,12 @@ const SmartGarden = () => {
       {/* Gallery Row 2 */}
       <section className="py-12 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative rounded-2xl overflow-hidden aspect-[3/4]">
-            <img src={gardenCloseup} alt="Close-up of smart garden bed at dusk" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="relative rounded-2xl overflow-hidden aspect-[3/4]">
-            <img src={gardenEvening} alt="Smart garden at evening with ambient lighting" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="relative rounded-2xl overflow-hidden aspect-[3/4]">
-            <img src={gardenLights} alt="Garden with soft ambient lights" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-          </motion.div>
+          {[gardenCloseup, gardenEvening, gardenLights].map((img, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+              <img src={img} alt="Smart garden detail" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
+            </motion.div>
+          ))}
         </div>
       </section>
 

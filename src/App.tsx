@@ -8,6 +8,7 @@ import SmartGarden from "./pages/SmartGarden.tsx";
 import SmartVilla from "./pages/SmartVilla.tsx";
 import SmartGreenhouse from "./pages/SmartGreenhouse.tsx";
 import SmartGrowingSystems from "./pages/SmartGrowingSystems.tsx";
+import SmartGardenAnalysis from "./pages/SmartGardenAnalysis.tsx";
 import EcoVillages from "./pages/EcoVillages.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/smart-villa" element={<SmartVilla />} />
           <Route path="/smart-greenhouse" element={<SmartGreenhouse />} />
           <Route path="/smart-growing-systems" element={<SmartGrowingSystems />} />
+          <Route path="/smart-garden-analysis" element={<SmartGardenAnalysis />} />
           <Route path="/eco-villages" element={<EcoVillages />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

@@ -5,7 +5,7 @@ import { ArrowLeft, Droplets, Sprout, Radio, Home, Zap, TrendingUp, ArrowUpRight
 import heroImg from "@/assets/villa-exterior-2.jpg";
 import villaExterior1 from "@/assets/villa-exterior-1.jpg";
 import gardenInterior1 from "@/assets/villa-garden-interior-1.jpg";
-import gardenInterior2 from "@/assets/villa-garden-interior-2.jpg";
+import villaWood from "@/assets/villa-scandinavian-wood.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -103,24 +103,20 @@ const SmartVilla = () => {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={villaExterior1} alt="Scandinavian smart villa with solar panels and natural garden" className="w-full h-full object-cover" />
+              <img src={villaExterior1} alt="Scandinavian smart villa with solar panels" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-              <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Solar-integrated architecture</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={gardenInterior1} alt="Smart greenhouse with raised beds and monitoring system" className="w-full h-full object-cover" />
+              <img src={villaWood} alt="Scandinavian wooden villa with integrated solar and nature" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-              <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Automated growing environment</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={gardenInterior2} alt="Smart garden interior with sensor displays and raised beds" className="w-full h-full object-cover" />
+              <img src={gardenInterior1} alt="Smart greenhouse integrated with villa" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-              <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Sensor-driven food production</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={heroImg} alt="Modern Scandinavian villa with integrated garden and water features" className="w-full h-full object-cover" />
+              <img src={heroImg} alt="Modern Scandinavian villa with integrated garden" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-              <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Integrated water & landscape design</p>
             </motion.div>
           </div>
         </div>

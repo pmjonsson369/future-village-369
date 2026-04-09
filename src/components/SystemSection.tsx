@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Droplets, Leaf, Zap, Radio } from "lucide-react";
-import waterImg from "@/assets/water-system.jpg";
-import foodImg from "@/assets/food-system.jpg";
-import energyImg from "@/assets/energy-system.jpg";
+import waterImg from "@/assets/water-system-realistic.jpg";
+import foodImg from "@/assets/food-system-realistic.jpg";
+import energyImg from "@/assets/energy-system-realistic.jpg";
 import smartImg from "@/assets/smart-systems.jpg";
 
 const systems = [
