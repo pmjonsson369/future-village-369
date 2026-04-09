@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/ecovillage-hero.jpg";
+import heroBg from "@/assets/hero-4k.jpg";
 
 const HeroSection = () => {
   return (
