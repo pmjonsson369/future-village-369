@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Droplets, Sprout, Radio, Eye, Shield, TrendingUp, Zap, Home, ArrowUpRight } from "lucide-react";
-import heroImg from "@/assets/ecovillage-hero.jpg";
-import ecoImg2 from "@/assets/ecovillage-2.jpg";
-import ecoImg3 from "@/assets/ecovillage-3.jpg";
-import ecoImg4 from "@/assets/ecovillage-4.jpg";
+import heroImg from "@/assets/ecovillage-hero-4k.jpg";
+import ecoImg2 from "@/assets/ecovillage-community.jpg";
+import ecoImg3 from "@/assets/ecovillage-gardens.jpg";
+import ecoImg4 from "@/assets/ecovillage-water.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -70,12 +70,12 @@ const EcoVillages = () => {
       <section className="py-12 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { img: ecoImg2, caption: "Solar-powered community homes" },
-            { img: ecoImg3, caption: "Shared gardens and pathways" },
-            { img: ecoImg4, caption: "Connected water systems" },
+            { img: ecoImg2, caption: "Regenerative community homes" },
+            { img: ecoImg3, caption: "Shared gardens and growing spaces" },
+            { img: ecoImg4, caption: "Integrated water systems" },
           ].map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={item.img} alt={item.caption} className="w-full h-full object-cover" />
+              <img src={item.img} alt={item.caption} loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
               <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">{item.caption}</p>
             </motion.div>

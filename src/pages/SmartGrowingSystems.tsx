@@ -2,13 +2,12 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Droplets, Smartphone, Eye, Sparkles, Timer, Leaf, Plane, Wifi, Thermometer, Sun, Cpu } from "lucide-react";
-import heroImg from "@/assets/garden-outdoor-1.jpg";
+import heroImg from "@/assets/garden-smart-beds.jpg";
+import gardenIrrigation from "@/assets/garden-irrigation.jpg";
+import gardenAppControl from "@/assets/garden-app-control.jpg";
+import gardenEveningLush from "@/assets/garden-evening-lush.jpg";
+import gardenPanorama from "@/assets/garden-panorama.jpg";
 import gardenBeds from "@/assets/garden-beds.jpg";
-import gardenCourtyard from "@/assets/garden-courtyard.jpg";
-import gardenCloseup from "@/assets/garden-closeup.jpg";
-import gardenEvening from "@/assets/garden-evening.jpg";
-import gardenLights from "@/assets/garden-lights.jpg";
-import gardenOutdoor2 from "@/assets/garden-outdoor-2.jpg";
 import greenhouseDark from "@/assets/greenhouse-dark.jpg";
 import greenhouseWood from "@/assets/greenhouse-wood.jpg";
 import Navbar from "@/components/Navbar";
@@ -62,19 +61,37 @@ const SmartGrowingSystems = () => {
         </div>
       </section>
 
-      {/* Garden Gallery */}
+      {/* Garden Gallery - Dynamic Layout */}
       <section className="py-12 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          <motion.div {...fadeIn} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src={gardenBeds} alt="Raised garden beds with lush greenery" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Clean raised beds, thriving plants</p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src={gardenCourtyard} alt="Garden courtyard" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Integrated landscape design</p>
-          </motion.div>
+        <div className="max-w-5xl mx-auto">
+          {/* Row 1: Large + Small stacked */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-6">
+            <motion.div {...fadeIn} className="md:col-span-3 relative rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={gardenPanorama} alt="Complete smart garden ecosystem" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Complete smart garden ecosystem with water features</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="md:col-span-2 relative rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={gardenIrrigation} alt="Automated precision irrigation" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Precision drip irrigation — water only where needed</p>
+            </motion.div>
+          </div>
+
+          {/* Row 2: Three equal */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { img: gardenAppControl, caption: "App-controlled monitoring and scheduling", aspect: "aspect-[3/4]" },
+              { img: gardenEveningLush, caption: "Ambient lighting and thriving evening garden", aspect: "aspect-[3/4]" },
+              { img: gardenBeds, caption: "Clean raised beds with hidden infrastructure", aspect: "aspect-[3/4]" },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative rounded-2xl overflow-hidden ${item.aspect}`}>
+                <img src={item.img} alt={item.caption} loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                <p className="absolute bottom-4 left-4 right-4 text-sm font-body text-foreground/80">{item.caption}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -101,18 +118,6 @@ const SmartGrowingSystems = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Garden Gallery Row 2 */}
-      <section className="py-12 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[gardenCloseup, gardenEvening, gardenLights].map((img, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative rounded-2xl overflow-hidden aspect-[3/4]">
-              <img src={img} alt="Smart garden detail" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-            </motion.div>
-          ))}
         </div>
       </section>
 
@@ -156,16 +161,6 @@ const SmartGrowingSystems = () => {
         </div>
       </section>
 
-      {/* Full-width Garden Image */}
-      <section className="py-12 px-6">
-        <div className="max-w-5xl mx-auto">
-          <motion.div {...fadeIn} className="relative rounded-2xl overflow-hidden aspect-[21/9]">
-            <img src={gardenOutdoor2} alt="Scandinavian backyard with smart garden" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
-          </motion.div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════ */}
       {/* SMART GREENHOUSE SECTION */}
       {/* ═══════════════════════════════════════════ */}
@@ -186,12 +181,12 @@ const SmartGrowingSystems = () => {
       <section className="py-12 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div {...fadeIn} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src={greenhouseDark} alt="Smart greenhouse exterior" className="w-full h-full object-cover" />
+            <img src={greenhouseDark} alt="Smart greenhouse exterior" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
             <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Climate-controlled environment</p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src={greenhouseWood} alt="Smart greenhouse interior" className="w-full h-full object-cover" />
+            <img src={greenhouseWood} alt="Smart greenhouse interior" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
             <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Sensor-driven growing, year-round</p>
           </motion.div>
