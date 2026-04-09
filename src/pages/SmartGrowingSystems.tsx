@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Droplets, Smartphone, Eye, Sparkles, Timer, Leaf, Plane, Wifi, Thermometer, Sun, Cpu } from "lucide-react";
+import { ArrowRight, Droplets, Smartphone, Eye, Sparkles, Timer, Leaf, Plane, Wifi, Thermometer, Sun, Cpu, Search } from "lucide-react";
 import heroImg from "@/assets/garden-smart-beds.jpg";
 import gardenIrrigation from "@/assets/garden-irrigation.jpg";
 import gardenAppControl from "@/assets/garden-app-control.jpg";
@@ -44,10 +44,30 @@ const SmartGrowingSystems = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ */}
-      {/* SMART GARDEN SECTION */}
-      {/* ═══════════════════════════════════════════ */}
+      {/* Smart Garden Analysis CTA */}
+      <section className="py-16 px-6 border-b border-border">
+        <div className="max-w-5xl mx-auto">
+          <motion.div {...fadeIn} className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-8 rounded-2xl border border-primary/20 bg-primary/5">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Search className="w-5 h-5 text-primary" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold mb-1 font-display">Smart Garden Analysis</h3>
+                <p className="text-sm text-muted-foreground font-body">Start with a personalized assessment of your garden — layout, water flow, and design potential.</p>
+              </div>
+            </div>
+            <Link
+              to="/smart-garden-analysis"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold tracking-wide hover:scale-105 transition-all duration-300 font-body whitespace-nowrap"
+            >
+              Learn More <ArrowRight size={14} />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
+      {/* SMART GARDEN SECTION */}
       <section id="smart-garden" className="py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div {...fadeIn}>
@@ -61,34 +81,25 @@ const SmartGrowingSystems = () => {
         </div>
       </section>
 
-      {/* Garden Gallery - Dynamic Layout */}
+      {/* Garden Gallery */}
       <section className="py-12 px-6">
         <div className="max-w-5xl mx-auto">
-          {/* Row 1: Large + Small stacked */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-6">
             <motion.div {...fadeIn} className="md:col-span-3 relative rounded-2xl overflow-hidden aspect-[4/3]">
               <img src={gardenPanorama} alt="Complete smart garden ecosystem" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-              <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Complete smart garden ecosystem with water features</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="md:col-span-2 relative rounded-2xl overflow-hidden aspect-[4/3]">
               <img src={gardenIrrigation} alt="Automated precision irrigation" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-              <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Precision drip irrigation — water only where needed</p>
             </motion.div>
           </div>
 
-          {/* Row 2: Three equal */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { img: gardenAppControl, caption: "App-controlled monitoring and scheduling", aspect: "aspect-[3/4]" },
-              { img: gardenEveningLush, caption: "Ambient lighting and thriving evening garden", aspect: "aspect-[3/4]" },
-              { img: gardenBeds, caption: "Clean raised beds with hidden infrastructure", aspect: "aspect-[3/4]" },
-            ].map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`relative rounded-2xl overflow-hidden ${item.aspect}`}>
-                <img src={item.img} alt={item.caption} loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
+            {[gardenAppControl, gardenEveningLush, gardenBeds].map((img, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                <img src={img} alt="Smart garden detail" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                <p className="absolute bottom-4 left-4 right-4 text-sm font-body text-foreground/80">{item.caption}</p>
               </motion.div>
             ))}
           </div>
@@ -161,10 +172,7 @@ const SmartGrowingSystems = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ */}
       {/* SMART GREENHOUSE SECTION */}
-      {/* ═══════════════════════════════════════════ */}
-
       <section id="smart-greenhouse" className="py-24 px-6 border-t border-border">
         <div className="max-w-3xl mx-auto">
           <motion.div {...fadeIn}>
@@ -177,18 +185,16 @@ const SmartGrowingSystems = () => {
         </div>
       </section>
 
-      {/* Greenhouse Image */}
+      {/* Greenhouse Images */}
       <section className="py-12 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div {...fadeIn} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
             <img src={greenhouseDark} alt="Smart greenhouse exterior" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Climate-controlled environment</p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
             <img src={greenhouseWood} alt="Smart greenhouse interior" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-sm font-body text-foreground/80">Sensor-driven growing, year-round</p>
           </motion.div>
         </div>
       </section>
